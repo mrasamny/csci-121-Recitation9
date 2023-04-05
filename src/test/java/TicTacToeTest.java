@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 
@@ -18,6 +19,7 @@ class TicTacToeTest {
     }
 
     @Test
+    @DisplayName("[1] test isValid")
     void isValid() {
         for(int loc = -5; loc < 15; loc++){
             boolean actual = board.isValid(loc);
@@ -28,6 +30,7 @@ class TicTacToeTest {
     }
 
     @Test
+    @DisplayName("[1] test isEmpty")
     void isEmpty() {
         for(int loc = 0; loc < 8; loc++) {
             boolean actual = board.isEmpty(loc);
@@ -39,6 +42,7 @@ class TicTacToeTest {
     }
 
     @Test
+    @DisplayName("[1] test movesRemaining")
     void movesRemaining() {
         int actual = board.movesRemaining();
         assertEquals(9,actual,"Expecting: 9\n Actual: "+ actual);
@@ -51,6 +55,7 @@ class TicTacToeTest {
     }
 
     @Test
+    @DisplayName("[1] test getPiece")
     void getPiece() {
         for(int loc = 0; loc < 9; loc++) {
             board.add(loc);
@@ -70,6 +75,7 @@ class TicTacToeTest {
     }
 
     @Test
+    @DisplayName("[5] test getWinner")
     void getWinner() {
         int[][] combos = {
                 {0,1,2,3,4,5,6},{2,1,0,5,4,3,8}, // diagonals
@@ -93,6 +99,7 @@ class TicTacToeTest {
     }
 
     @Test
+    @DisplayName("[2] test clear")
     void clear() {
         for(int loc = 0; loc < 9; loc++) {
             board.add(loc);
